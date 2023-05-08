@@ -6,20 +6,20 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 13:35:16 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/08 13:41:39 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/08 14:56:47 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = brainz
 
 CC = c++
-CFLAGS = -g -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 
 HEADER =	inc/Zombie.hpp
-SRCS = src/
-OBJ_DIR = obj/
-OBJS = $(patsubst $(SRCS)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
+D_SRC = src/
+D_OBJ = obj/
+OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS =	src/main.cpp \
 		src/newZombie.cpp \
 		src/randomChump.cpp \
@@ -30,20 +30,20 @@ SRCS =	src/main.cpp \
 #------------------------------------------------------------------------------#
 
 all:	 $(NAME)
-	@echo "$(OK_COLOR) BOOM 💥💥💥💥💥 $(NAME) Compiled! 💯 $(DEFAULT)"
+	@echo "$(OK_COLOR)BOOM 💥💥💥💥💥 $(NAME) Compiled! 💯 $(DEFAULT)"
 
-$(NAME):	$(OBJ_DIR) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $@
+$(NAME):	$(D_OBJ) $(OBJS)
+	@$(CC) $(CPPFLAGS) $(OBJS) -o $@
 
-$(OBJ_DIR):
-	@mkdir -p $(OBJ_DIR)
+$(D_OBJ):
+	@mkdir -p $(D_OBJ)
 
-$(OBJS): $(OBJ_DIR)%.o : $(SRCS)%.cpp $(HEADER)
-		@$(CC) $(CFLAGS) -c $< -o $@
+$(OBJS): $(D_OBJ)%.o : $(D_SRC)%.cpp $(HEADER)
+		@$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJ_DIR)
-	@echo "🧹🧹🧹🧹🧹🧹 $(NAME) Cleaned! 🧹🧹🧹🧹🧹🧹"
+	@$(RM) $(D_OBJ)
+	@echo "$(OK_COLOR)$(NAME) Cleaned 💯 $(DEFAULT)"
 
 fclean:	clean
 	@$(RM) $(NAME) $(NAME_BONUS)
