@@ -1,0 +1,74 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/05/08 13:35:16 by loadjou           #+#    #+#              #
+#    Updated: 2023/05/08 13:41:39 by loadjou          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = brainz
+
+CC = c++
+CFLAGS = -g -Wall -Werror -Wextra -std=c++98
+RM = rm -rf
+
+HEADER =	inc/Zombie.hpp
+SRCS = src/
+OBJ_DIR = obj/
+OBJS = $(patsubst $(SRCS)%.cpp,$(OBJ_DIR)%.o,$(SRCS))
+SRCS =	src/main.cpp \
+		src/newZombie.cpp \
+		src/randomChump.cpp \
+		src/Zombie.cpp
+
+#------------------------------------------------------------------------------#
+#									 RULES									   #
+#------------------------------------------------------------------------------#
+
+all:	 $(NAME)
+	@echo "$(OK_COLOR) BOOM 💥💥💥💥💥 $(NAME) Compiled! 💯 $(DEFAULT)"
+
+$(NAME):	$(OBJ_DIR) $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJS): $(OBJ_DIR)%.o : $(SRCS)%.cpp $(HEADER)
+		@$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@$(RM) $(OBJ_DIR)
+	@echo "🧹🧹🧹🧹🧹🧹 $(NAME) Cleaned! 🧹🧹🧹🧹🧹🧹"
+
+fclean:	clean
+	@$(RM) $(NAME) $(NAME_BONUS)
+
+re:	fclean all
+
+.PHONY: all clean fclean lclean re
+
+
+#------------------------------------------------------------------------------#
+#									 COLORS									   #
+#------------------------------------------------------------------------------#
+
+RED = \033[1;31m
+YELLOW = \033[1;33m
+DEFAULT = \033[0m
+COM_COLOR   = \033[0;34m
+OBJ_COLOR   = \033[0;36m
+OK_COLOR    = \033[0;32m
+ERROR_COLOR = \033[0;31m
+WARN_COLOR  = \033[0;33m
+NO_COLOR    = \033[m
+
+summary:
+	valgrind --leak-check=summary --trace-children=yes --track-fds=yes ./$(NAME)
+
+valgrind:
+	valgrind --leak-check=full  --show-leak-kinds=all --trace-children=yes --track-fds=yes ./$(NAME)
