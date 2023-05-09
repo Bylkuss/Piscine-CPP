@@ -6,23 +6,30 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 20:34:03 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/08 20:34:13 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/09 12:06:09 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 
-NAME = HTIB
+NAME = UV
 
 CC = c++
 CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 
-HEADER =	inc/main.hpp
+HEADER =	inc/HumanA.hpp \
+			inc/HumanB.hpp \
+			inc/Weapon.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS =	src/main.cpp
+SRCS =	src/main.cpp \
+		src/HumanB.cpp \
+		src/HumanA.cpp \
+		src/Weapon.cpp
+
+
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #

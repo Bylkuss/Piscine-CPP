@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:53:32 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/09 10:56:46 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/09 18:58:40 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,25 @@ HumanA::HumanA()
 {
 }
 
-HumanA::HumanA(std::string name, Weapon &type)
+HumanA::HumanA(std::string name, Weapon &weapon)
 {    
     this->_name = name;
-    this->_type = type;
+    setWeapon(weapon);
+    // this->_weapon = weapon;
 }
-
 
 HumanA::~HumanA()
 {
 }
+const Weapon &HumanA::getWeapon() const
+{
+    return this->_weapon;
+}
 
+void HumanA::setWeapon(Weapon weapon)
+{
+    this->_weapon = weapon;
+}
 
 void HumanA::attack(void)
 {
