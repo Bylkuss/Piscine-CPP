@@ -6,7 +6,7 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 20:34:03 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/09 12:06:09 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/10 14:06:18 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ $(D_OBJ):
 
 $(OBJS): $(D_OBJ)%.o : $(D_SRC)%.cpp $(HEADER)
 		@$(CC) $(CPPFLAGS) -c $< -o $@
-
+run: re
+	@./$(NAME)
 clean:
 	@$(RM) $(D_OBJ)
 	@echo "$(OK_COLOR)$(NAME) Cleaned 💯 $(DEFAULT)"

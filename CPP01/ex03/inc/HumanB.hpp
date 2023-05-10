@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:43:37 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/09 18:39:01 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/10 13:47:51 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@
 
 class HumanB
 {
-    private:
-        Weapon *_type;
-        std::string _name;
-    public:
-        HumanB();
-        HumanB(std::string _name);
-        ~HumanB();
-        const Weapon &getWeapon();
-        void setWeapon(Weapon &Weapon);
-        void attack(void);
+	private:
+		std::string _name;
+		Weapon *_weapon;
+	public:
+		HumanB(std::string name);
+		~HumanB();
+		void				attack();
+		const Weapon		&getWeapon();
+		void				setWeapon(Weapon &weapon);
 };
 
 

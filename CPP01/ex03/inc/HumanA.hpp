@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 10:52:55 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/09 19:03:03 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/10 13:47:19 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,15 @@
 
 class HumanA
 {
-    private:
-        Weapon _weapon;
-        std::string _name;
-    public:
-        HumanA();
-        HumanA(std::string _name, Weapon &weapon);
-        ~HumanA();
-
-        void attack(void);
-        const Weapon &getWeapon() const;
-        void setWeapon(Weapon weapon);
+	private:
+		std::string _name;
+		Weapon &_weapon;
+	public:
+		HumanA(std::string name, Weapon &weapon);
+		~HumanA();
+		void				attack();
+		const Weapon		&getWeapon() const;
+		void				setWeapon(Weapon weapon);
 };
 
 

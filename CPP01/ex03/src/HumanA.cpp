@@ -6,38 +6,32 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:53:32 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/09 18:58:40 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/10 14:06:52 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../inc/HumanA.hpp"
 
-HumanA::HumanA()
-{
-}
-
 HumanA::HumanA(std::string name, Weapon &weapon)
-{    
-    this->_name = name;
-    setWeapon(weapon);
-    // this->_weapon = weapon;
+	: _name(name), _weapon(weapon)
+{
 }
 
 HumanA::~HumanA()
 {
 }
+
 const Weapon &HumanA::getWeapon() const
 {
-    return this->_weapon;
+	return (_weapon);
 }
 
 void HumanA::setWeapon(Weapon weapon)
 {
-    this->_weapon = weapon;
+	_weapon = weapon;
 }
 
-void HumanA::attack(void)
+void HumanA::attack()
 {
-    std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
+	std::cout << BGREEN << _name << " attacks with their " << _weapon.getType() << RESET << std::endl;
 }
