@@ -1,4 +1,5 @@
 /.vscode
 
+/CPP01/ex04/input/invalid_input
 *.o
 *.out
