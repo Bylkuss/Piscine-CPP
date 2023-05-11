@@ -6,37 +6,18 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 14:27:08 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/10 16:12:16 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/11 17:36:28 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SED_HPP
 #define SED_HPP
 
-#include <iostream>
 #include <fstream>
-#include <unistd.h>
 #include <string>
+#include <iostream>
+#include <iomanip>
 
-class Sed
-{
-    private:
-        std::string _fullFile;
-        std::string _output;
-        /* data */
-    public:
-        Sed(/* args */);
-        Sed(std::string filePath, std::string s1, std::string s2);
-        Sed(std::string file, std::string s1, std::string s2, std::string output);
-        ~Sed();
-
-        std::string const   getFullFile() const;
-        void               setFullFile(std::string fullFile);
-
-        void                replace(std::string s1, std::string s2);
-        bool checkInput(std::string filePath);
-        const bool checkStrings(std::string filePath) const;
-};
 
 /* ***** COLORS ***** */
 # define RESET "\e[0m"

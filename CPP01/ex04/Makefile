@@ -6,7 +6,7 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/10 14:11:15 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/10 16:18:51 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/11 17:36:47 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS =	src/main.cpp \
-		src/sed.cpp
 
 
 

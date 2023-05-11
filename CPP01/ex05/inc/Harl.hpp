@@ -6,9 +6,12 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:02:41 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/11 18:40:33 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/11 19:36:14 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
 #include <string>
@@ -36,3 +39,5 @@ public:
 # define BMAG "\e[1;35m"
 # define BCYAN "\e[1;36m"
 # define BWHT "\e[1;37m"
+
+#endif
