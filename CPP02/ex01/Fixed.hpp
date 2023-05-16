@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:45:21 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/16 12:18:59 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/16 12:56:03 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -23,13 +24,17 @@ class Fixed
     public:
         Fixed();
         Fixed(int nb);
+        Fixed(float nb);
+        Fixed(Fixed const &copy);                           // Copy constructor
+        Fixed &operator=(Fixed const &assigned);            // Copy assignment operator
         ~Fixed();
-        Fixed(Fixed const &copy);                    // Copy constructor
-        Fixed& operator=(Fixed const &assigned);         // Copy assignment operator
-        
-        int getRawBits( void ) const;
-        void setRawBits(const int raw);
+        float		toFloat(void) const;
+        int			toInt(void) const;
+        int         getRawBits( void ) const;
+        void        setRawBits(const int raw);
 };
+/***PROTOTYPES*/
+std::ostream &operator<<(std::ostream &out, const Fixed &fixe);
 
 
 
