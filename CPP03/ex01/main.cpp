@@ -6,36 +6,32 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:13:24 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/16 21:00:10 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/17 10:38:58 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int	main(void)
+int main()
 {
-	{
-		ClapTrap clapTrap("First");
-		ClapTrap clapTrap2(clapTrap);
-		ClapTrap clapTrap3;
-		clapTrap3 = clapTrap2;
-		clapTrap.attack("target");
-		clapTrap.takeDamage(10);
-		clapTrap.beRepaired(10);
-	}
-	std::cout << std::endl << "Dave - Mathieu" << std::endl;
-	{
-		ClapTrap clap("Dave");
-        clap.takeDamage(10);
-		clap.attack("Mathieu");
-		clap.beRepaired(3);
-	}
-	std::cout << std::endl << "John - Jay" << std::endl;
-	{
-		ClapTrap clap("John");
-		clap.attack("Jay");
-		clap.beRepaired(3);
-	}
+    std::cout << RED << "**********TODO more tests!********" << RESET << std::endl << std::endl << std::endl;
+    ClapTrap clapTrap;
+    ClapTrap clapTrap2("Bob");
+
+    clapTrap.attack("bad guy");
+    clapTrap2.attack("bad guy");
+    clapTrap2.takeDamage(3);
+    clapTrap2.beRepaired(1);
+
+    std::cout << std::endl;
     
-	return (0);
+    ScavTrap scavTrap;
+    ScavTrap scavTrap2("John");
+
+    scavTrap.attack("bad guy");
+    clapTrap2.attack("bad guy");
+    scavTrap2.guardGate();
+
+    return 0;
 }

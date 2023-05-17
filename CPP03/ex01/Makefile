@@ -6,20 +6,21 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 19:58:06 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/16 19:59:18 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/17 10:08:56 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = ScavTrap
 
 CC = c++
 CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 
-HEADER =	ClapTrap.hpp
+HEADER =	ClapTrap.hpp ScavTrap.hpp
 D_OBJ = obj/
 OBJS = $(patsubst %.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS =	main.cpp \
+		ScavTrap.cpp \
 		ClapTrap.cpp
 
 

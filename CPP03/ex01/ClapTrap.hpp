@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 20:00:26 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/16 20:59:12 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/17 10:32:22 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include "ClapTrap.hpp"
 
 class ClapTrap
 {
-    private:
+    protected:          //protected so that ScavTrap can inherit (alternative to private)
         std::string _name;
         int _hitPoints;
         int _energyPoints;
@@ -50,9 +51,10 @@ class ClapTrap
 
 /********COLORS*********/
 #define RESET   "\033[0m"
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
+#define RED     "\033[1;31m"
+#define GREEN   "\033[1;32m"
+#define YELLOW  "\033[3;33m"
+
 
 
 #endif
