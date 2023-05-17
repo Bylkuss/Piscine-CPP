@@ -6,11 +6,11 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 19:58:06 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/17 11:14:36 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/17 12:28:38 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ScavTrap
+NAME = FragTrap
 
 CC = c++
 CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
