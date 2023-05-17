@@ -6,7 +6,7 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 19:58:06 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/17 10:08:56 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/17 16:12:41 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ $(OBJS): $(D_OBJ)%.o : %.cpp $(HEADER)
 		@$(CC) $(CPPFLAGS) -c $< -o $@
 
 run: re
+	@clear
 	@./$(NAME)
 
 clean:
