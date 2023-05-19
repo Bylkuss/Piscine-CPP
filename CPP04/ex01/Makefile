@@ -6,12 +6,12 @@
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/18 12:57:58 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/18 17:16:27 by loadjou          ###   ########.fr        #
+#    Updated: 2023/05/19 10:46:17 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = Animal
+NAME = Brain
 
 CC = c++
 CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
@@ -19,17 +19,15 @@ RM = rm -rf
 
 HEADER =	Animal.hpp \
 			Cat.hpp \
-			WrongAnimal.hpp \
-			WrongCat.hpp \
-			Dog.hpp
+			Dog.hpp \
+			Brain.hpp
 D_OBJ = obj/
 OBJS = $(patsubst %.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS =	main.cpp \
 		Animal.cpp \
 		Cat.cpp \
-		WrongAnimal.cpp \
-		WrongCat.cpp \
-		Dog.cpp
+		Dog.cpp \
+		Brain.cpp
 
 
 

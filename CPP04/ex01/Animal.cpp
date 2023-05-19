@@ -6,34 +6,39 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:12:22 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/18 15:08:17 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/19 11:33:10 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal() : _type("DefaultAnimal")
 {
-    std::cout << YELLOW << "A type of Animal was born!" << RESET << std::endl;
+    std::cout << YELLOW << _type << " was born! (Default constructor)" << RESET << std::endl;
 }
 
 Animal::Animal(std::string type) : _type(type)
 {
+    std::cout << YELLOW << _type << " was born!" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal &copy)
 {
+    std::cout << YELLOW << "Animal copy constructor called!" << RESET << std::endl;
+    _type = std::string(copy._type);
     *this = copy;
 }
 Animal &Animal::operator=(const Animal &src)
 {
-    if (this != &src)
-    {
-        this->_type = src._type;
-    }
+    std::cout << YELLOW << "Animal assignation operator constructor called!" << RESET << std::endl;
+    _type = std::string(src._type);
     return (*this);
 }
 
+Animal::~Animal()
+{
+    std::cout << YELLOW << "A type of Animal died!" << RESET << std::endl;
+}
 void Animal::makeSound() const
 {
     std::cout << "Animal sound" << std::endl;
@@ -48,9 +53,4 @@ void Animal::setType(std::string type)
 std::string Animal::getType() const
 {
     return (this->_type);
-}
-
-Animal::~Animal()
-{
-    std::cout << YELLOW << "A type of Animal died!" << RESET << std::endl;
 }

@@ -6,35 +6,45 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:54:11 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/18 15:07:24 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/19 11:35:43 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal("Cat"), _brain(new Brain())
 {
-    // this->_type = "Cat";
-    std::cout << YELLOW << _type << " was born!" << RESET << std::endl;
+    std::cout << YELLOW << _type << " was born! (Default constructor)" RESET << std::endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal(copy)
+Cat::Cat(std::string type) : Animal(type), _brain(new Brain())
 {
-    *this = copy;
+    std::cout << YELLOW << _type << " was born!" << RESET << std::endl;
 }
+Cat::Cat(const Cat& copy) : Animal(copy)
+{
+    this->_brain = new Brain(*copy._brain);
+}
+
+
 Cat &Cat::operator=(const Cat &src)
 {
-    if (this != &src)
-    {
-        this->_type = src._type;
-    }
+    std::cout << YELLOW << "Cat assignation operator constructor" << RESET << std::endl;
+    this->_type = src._type;
+    this->_brain = new Brain(*src._brain);
     return (*this);
 }
 
 Cat::~Cat()
 {
-    std::cout << YELLOW << "Cat died!" << RESET << std::endl;
+    delete this->_brain;
+    std::cout << YELLOW << "Cat died, Brain deleted!" << RESET << std::endl;
 }
+Brain* Cat::getBrain() const
+{
+    return (this->_brain);
+}
+
 void Cat::makeSound() const
 {
     std::cout << GREEN << "Cat meows" << RESET << std::endl;

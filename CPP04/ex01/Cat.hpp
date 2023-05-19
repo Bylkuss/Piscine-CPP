@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:36:04 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/18 15:08:48 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/19 11:34:09 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
     public:
         Cat();
-        ~Cat();
+        Cat(std::string type);  
         Cat(const Cat &copy);
         Cat &operator=(const Cat &src);
+        virtual ~Cat();
         
-        void makeSound() const;      
+        virtual void makeSound() const;
+        Brain *getBrain() const;
+    private:
+        Brain *_brain;
 };
 
 #endif
