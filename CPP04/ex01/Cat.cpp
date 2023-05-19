@@ -6,7 +6,7 @@
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:54:11 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/19 11:35:43 by loadjou          ###   ########.fr       */
+/*   Updated: 2023/05/19 12:04:15 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ Cat::Cat(std::string type) : Animal(type), _brain(new Brain())
 {
     std::cout << YELLOW << _type << " was born!" << RESET << std::endl;
 }
-Cat::Cat(const Cat& copy) : Animal(copy)
+Cat::Cat(const Cat& copy) : Animal(copy), _brain(new Brain)
 {
     this->_brain = new Brain(*copy._brain);
+    *this = copy;
 }
 
 
