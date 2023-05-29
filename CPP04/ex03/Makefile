@@ -5,30 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/18 12:57:58 by loadjou           #+#    #+#              #
-#    Updated: 2023/05/20 16:19:13 by loadjou          ###   ########.fr        #
+#    Created: 2023/05/26 18:24:31 by loadjou           #+#    #+#              #
+#    Updated: 2023/05/26 18:24:33 by loadjou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = Brain
+
+NAME = Abstract
 
 CC = c++
 CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 
-HEADER =	Animal.hpp \
+HEADER =	AAnimal.hpp \
 			Cat.hpp \
 			Dog.hpp \
 			Brain.hpp
 D_OBJ = obj/
 OBJS = $(patsubst %.cpp,$(D_OBJ)%.o,$(SRCS))
 SRCS =	main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Cat.cpp \
 		Dog.cpp \
 		Brain.cpp
-
 
 
 #------------------------------------------------------------------------------#

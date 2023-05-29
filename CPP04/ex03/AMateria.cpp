@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: loadjou <loadjou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/18 14:33:21 by loadjou           #+#    #+#             */
-/*   Updated: 2023/05/19 13:00:37 by loadjou          ###   ########.fr       */
+/*   Created: 2023/05/29 12:34:30 by loadjou           #+#    #+#             */
+/*   Updated: 2023/05/29 12:43:32 by loadjou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include "AMateria.hpp"
 
-
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Dog : public Animal
+AMateria::AMateria(std::string const &type)
 {
-    public:
-        Dog();
-        Dog(std::string type);
-        Dog(const Dog &copy);
-        Dog &operator=(const Dog &src);
-        ~Dog();
-        
-	    Brain *getBrain() const;
-        void makeSound() const;
-    private:
-        Brain *_brain;
-};
+    _type = type;
+    std::cout << YELLOW << type << "Constructor called!" RESET << std::endl;
+}
+std::string const &AMateria::getType() const
+{
+    return this->_type;
+}
 
-#endif
+
