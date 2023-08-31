@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = Bureaucrat
 
 CC = c++
 CPPFLAGS = -g -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 
-HEADER =	inc/Zombie.hpp
+HEADER =	inc/Bureaucrat.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
