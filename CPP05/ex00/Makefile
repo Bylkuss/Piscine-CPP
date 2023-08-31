@@ -20,10 +20,8 @@ HEADER =	inc/Bureaucrat.hpp
 D_SRC = src/
 D_OBJ = obj/
 OBJS = $(patsubst $(D_SRC)%.cpp,$(D_OBJ)%.o,$(SRCS))
-SRCS =	src/main.cpp \
-		src/newZombie.cpp \
-		src/randomChump.cpp \
-		src/Zombie.cpp
+SRCS =	src/Bureaucrat.cpp
+#src/main.cpp \
 
 #------------------------------------------------------------------------------#
 #									 RULES									   #

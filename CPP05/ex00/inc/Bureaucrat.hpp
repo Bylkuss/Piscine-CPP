@@ -17,7 +17,7 @@ public:
 
 
     void setGrade(int grade);
-    int getGrade(int);
-}
+    int getGrade();
+};
 
 #endif
